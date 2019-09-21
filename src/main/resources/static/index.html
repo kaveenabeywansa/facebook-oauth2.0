@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Facebook OAuth 2.0</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width"/>
+    <base href="/"/>
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/darkly/bootstrap.min.css"/>
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+        .animatePhoto {
+            transition: all 0.5s ease-in-out;
+            margin-left: 20%;
+        }
+
+        .animatePhoto:hover {
+            animation: rotation 1200ms infinite linear;
+        }
+        @keyframes rotation {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(359deg);
+            }
+        }
+
+        .footer{
+            display: table;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            color: #ff9300;
+        }
+    </style>
+</head>
+<body>
+<h1>Facebook OAuth 2.0</h1>
+<div class="progress">
+    <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<hr class="my-4">
+<div class="container unauthenticated">
+<!--     Login With Facebook: <a href="/login">click here</a>-->
+<!--    -->
+    <div class="jumbotron">
+        <h1 class="display-3">Hello!</h1>
+        <p class="lead">This is a simple application that implements the use of Facebook OAuth 2.0 to authenticate users</p>
+        <hr class="my-4">
+        <p>Click the button below the authenticate with facebook</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="/login" role="button">Authenticate</a>
+        </p>
+    </div>
+</div>
+<div class="container authenticated" style="display:none">
+<!--    Logged into Facebook as: <span id="user"></span>-->
+<!--    -->
+    <div class="jumbotron">
+        <h1 class="display-3">Hello, <span id="user"></span>!</h1>
+        <p class="lead">You have successfully authenticated this application using Faceboo OAuth 2.0</p>
+        <hr class="my-4">
+        <img class="animatePhoto" src="https://firebasestorage.googleapis.com/v0/b/fish-bowl-5d2b6.appspot.com/o/SSD-Assignment%2Fimg-cup.png?alt=media&token=e9dbc57f-aa14-4d7b-9dff-08ebd705243c" width="200"/>
+        <hr class="my-4">
+        <p>This application does not store any personal details obtained from your <span class="badge badge-pill badge-primary">Facebook</span> account</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="https://www.facebook.com" role="button">Go to Facebook</a>
+        </p>
+    </div>
+</div>
+
+<div class="footer">©Kaveen Abeywansa</div>
+
+<script type="text/javascript">
+    $.get("/user", function(data) {
+        $("#user").html(data.userAuthentication.details.name);
+        $(".unauthenticated").hide()
+        $(".authenticated").show()
+    });
+
+</script>
+</body>
+</html>
