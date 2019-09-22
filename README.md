@@ -11,14 +11,17 @@ However, the following are required to be installed in the local machine in orde
 - Eclipse IDE OR IntelliJ IDE
 
 Once you run the project you will get the following screen. Click the Authenticate button in here to display the request access user interface.
+
 [![Welcome Page](https://1.bp.blogspot.com/-6_5HgpbBQB8/XYdg-4CeQqI/AAAAAAAABAc/KWkjIbDjqb4VnAdD4nYNvrxgJWJBSW6swCLcBGAsYHQ/s640/Capture6.PNG)]()
 
 
 The following user interface is requesting the permission from the user to access their Facebook account data. Click next Continue to grant permission for this application.
+
 [![Request Access to Facebook Account](https://1.bp.blogspot.com/-BKrT2gcc9uc/XYdh7xFPP1I/AAAAAAAABA4/FAptNu28WMsrnV4MSEOZEr400XOI6t-mACLcBGAsYHQ/s640/Capture.PNG)]()
 
 
 After the application is successfully authorized, it would fetch the name of the user's Facebook profile and will display it in a Hello user view.
+
 [![Get User Data from Facebook](https://1.bp.blogspot.com/-UAexvX7aDOc/XYdg_mv0PuI/AAAAAAAABAg/HPdJsJ3davYQqJdBumX0BcouTZE-vPJvQCLcBGAsYHQ/s640/Capture7.PNG)]()
 
 
